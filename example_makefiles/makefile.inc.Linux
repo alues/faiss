@@ -131,7 +131,7 @@ NVCCLDFLAGS  = -L$(CUDAROOT)/lib64
 NVCCLIBS     = -lcudart -lcublas -lcuda
 CUDACFLAGS   = -I$(CUDAROOT)/include
 NVCCFLAGS    = -I $(CUDAROOT)/targets/x86_64-linux/include/ \
--Xcompiler -fPIC \
+-Xcompiler $(LDFLAGS) \
 -Xcudafe --diag_suppress=unrecognized_attribute \
 -gencode arch=compute_35,code="compute_35" \
 -gencode arch=compute_52,code="compute_52" \
